@@ -17,7 +17,7 @@ class ViewController: UIViewController {
     @IBOutlet weak var gradeSlider: UISlider!
     @IBOutlet weak var gradeLabel: UILabel!
 
-    var restoArray = [Restaurant]()
+    var restoManager = RestaurantManager()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -60,9 +60,7 @@ class ViewController: UIViewController {
             resto = Restaurant(name: nameTextField.text!, address: addressTextField.text!, style: Restaurant.RestoStyle(rawValue: styleString)!)
         }
 
-        restoArray.append(resto)
-
-        print(restoArray)
+        restoManager.addRestaurant(resto)
     }
 
     @IBAction func alreadyVisitedSwitchValueChanged(sender: UISwitch) {
