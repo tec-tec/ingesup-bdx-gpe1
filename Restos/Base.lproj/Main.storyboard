@@ -24,9 +24,12 @@
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <slider opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="x46-LE-lj8">
+                            <slider opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="5" minValue="0.0" maxValue="10" translatesAutoresizingMaskIntoConstraints="NO" id="x46-LE-lj8">
                                 <rect key="frame" x="23" y="338" width="257" height="31"/>
                                 <animations/>
+                                <connections>
+                                    <action selector="gradeValueChanged:" destination="BYZ-38-t0r" eventType="valueChanged" id="4ay-c5-O2b"/>
+                                </connections>
                             </slider>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Adresse" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="D3C-nN-eCR">
                                 <rect key="frame" x="20" y="102" width="62" height="21"/>
@@ -91,6 +94,13 @@
                                     <action selector="saveRestaurant:" destination="BYZ-38-t0r" eventType="touchUpInside" id="8ww-ZP-oha"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="5" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qny-hU-e1c">
+                                <rect key="frame" x="295" y="342" width="25" height="21"/>
+                                <animations/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
@@ -98,6 +108,7 @@
                     <connections>
                         <outlet property="addressTextField" destination="P5I-St-kwU" id="ytP-wm-ZW4"/>
                         <outlet property="alreadyVisitedSwitch" destination="22M-5c-3YM" id="KQY-OK-i1j"/>
+                        <outlet property="gradeLabel" destination="qny-hU-e1c" id="kBj-Pb-v93"/>
                         <outlet property="gradeSlider" destination="x46-LE-lj8" id="3Id-VQ-huY"/>
                         <outlet property="nameTextField" destination="XQj-qv-3X7" id="uQb-m7-fEc"/>
                         <outlet property="styleSegmentedControl" destination="TzC-RY-yVc" id="YfU-Zq-y3f"/>

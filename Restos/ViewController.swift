@@ -15,6 +15,9 @@ class ViewController: UIViewController {
     @IBOutlet weak var styleSegmentedControl: UISegmentedControl!
     @IBOutlet weak var alreadyVisitedSwitch: UISwitch!
     @IBOutlet weak var gradeSlider: UISlider!
+    @IBOutlet weak var gradeLabel: UILabel!
+
+    var restoArray = [Restaurant]()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -48,12 +51,27 @@ class ViewController: UIViewController {
         let selectedSegmentIndex = styleSegmentedControl.selectedSegmentIndex
         let styleString = styleSegmentedControl.titleForSegmentAtIndex(selectedSegmentIndex)!
 
-        let resto = Restaurant(name: nameTextField.text!, address: addressTextField.text!, style: Restaurant.RestoStyle(rawValue: styleString)!, alreadyVisited: alreadyVisitedSwitch.on, grade:Int(gradeSlider.value))
+        let resto: Restaurant
+
+        if alreadyVisitedSwitch.on {
+            resto = Restaurant(name: nameTextField.text!, address: addressTextField.text!, style: Restaurant.RestoStyle(rawValue: styleString)!, alreadyVisited: alreadyVisitedSwitch.on, grade:Int(gradeSlider.value))
+        } else {
+
+            resto = Restaurant(name: nameTextField.text!, address: addressTextField.text!, style: Restaurant.RestoStyle(rawValue: styleString)!)
+        }
+
+        restoArray.append(resto)
+
+        print(restoArray)
     }
 
     @IBAction func alreadyVisitedSwitchValueChanged(sender: UISwitch) {
 
         gradeSlider.enabled = sender.on
+    }
+    @IBAction func gradeValueChanged(sender: UISlider) {
+
+        gradeLabel.text = "\(Int(gradeSlider.value))"
     }
 }
 
