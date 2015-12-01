@@ -64,6 +64,9 @@
                             <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="22M-5c-3YM">
                                 <rect key="frame" x="25" y="270" width="51" height="31"/>
                                 <animations/>
+                                <connections>
+                                    <action selector="alreadyVisitedSwitchValueChanged:" destination="BYZ-38-t0r" eventType="valueChanged" id="dm8-p3-zNJ"/>
+                                </connections>
                             </switch>
                             <segmentedControl opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="TzC-RY-yVc">
                                 <rect key="frame" x="25" y="198" width="121" height="29"/>

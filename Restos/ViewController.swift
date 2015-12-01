@@ -27,7 +27,21 @@ class ViewController: UIViewController {
     }
 
     @IBAction func saveRestaurant(sender: UIButton) {
+
+        guard nameTextField.text?.isEmpty == false else {
+            return
+        }
+
+        guard addressTextField.text?.isEmpty == false else {
+            return
+        }
+
+        print(nameTextField.text)
     }
 
+    @IBAction func alreadyVisitedSwitchValueChanged(sender: UISwitch) {
+
+        gradeSlider.enabled = sender.on
+    }
 }
 
