@@ -16,6 +16,11 @@ struct Restaurant {
         case Japanese
         case Indian
         case French
+
+        static var allCase: [String] {
+
+            return [self.Unknown.rawValue, self.Chinese.rawValue, self.Japanese.rawValue, self.Indian.rawValue, self.French.rawValue]
+        }
     }
 
     let name: String

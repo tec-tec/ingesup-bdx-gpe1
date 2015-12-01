@@ -19,6 +19,15 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+
+        styleSegmentedControl.removeAllSegments()
+
+        for (i, type) in Restaurant.RestoStyle.allCase.enumerate() {
+
+            styleSegmentedControl.insertSegmentWithTitle(type, atIndex: i, animated: false)
+        }
+        styleSegmentedControl.selectedSegmentIndex = 0
+
     }
 
     override func didReceiveMemoryWarning() {
@@ -36,7 +45,10 @@ class ViewController: UIViewController {
             return
         }
 
-        print(nameTextField.text)
+        let selectedSegmentIndex = styleSegmentedControl.selectedSegmentIndex
+        let styleString = styleSegmentedControl.titleForSegmentAtIndex(selectedSegmentIndex)!
+
+        let resto = Restaurant(name: nameTextField.text!, address: addressTextField.text!, style: Restaurant.RestoStyle(rawValue: styleString)!, alreadyVisited: alreadyVisitedSwitch.on, grade:Int(gradeSlider.value))
     }
 
     @IBAction func alreadyVisitedSwitchValueChanged(sender: UISwitch) {
