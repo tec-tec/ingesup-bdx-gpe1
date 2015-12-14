@@ -63,6 +63,7 @@ class ViewController: UIViewController {
         }
 
         restoManager.addRestaurant(resto)
+        dismissViewControllerAnimated(true, completion: nil)
     }
 
     @IBAction func alreadyVisitedSwitchValueChanged(sender: UISwitch) {
@@ -72,6 +73,10 @@ class ViewController: UIViewController {
     @IBAction func gradeValueChanged(sender: UISlider) {
 
         gradeLabel.text = "\(Int(gradeSlider.value))"
+    }
+    @IBAction func cancel(sender: AnyObject) {
+
+        dismissViewControllerAnimated(true, completion: nil)
     }
 }
 
