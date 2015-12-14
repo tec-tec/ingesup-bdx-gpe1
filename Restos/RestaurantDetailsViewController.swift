@@ -61,6 +61,8 @@ class RestaurantDetailsViewController: UIViewController {
             let mapPlaceMark = MKPlacemark(placemark: placemarkArray!.first!)
 
             self.mapView.addAnnotation(mapPlaceMark)
+            let regionToZoom = MKCoordinateRegion(center: mapPlaceMark.coordinate, span: MKCoordinateSpan(latitudeDelta: 0.005, longitudeDelta: 0.005))
+            self.mapView.setRegion(regionToZoom, animated: true)
             
         }
     }
