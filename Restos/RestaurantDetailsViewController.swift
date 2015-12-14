@@ -10,6 +10,11 @@ import UIKit
 
 class RestaurantDetailsViewController: UIViewController {
 
+    @IBOutlet weak var addressLabel: UILabel!
+    @IBOutlet weak var gradeLabel: UILabel!
+
+    var currentRestaurant: Restaurant!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
