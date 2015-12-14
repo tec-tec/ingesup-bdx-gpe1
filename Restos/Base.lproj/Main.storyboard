@@ -218,10 +218,10 @@
             </objects>
             <point key="canvasLocation" x="1057" y="1113"/>
         </scene>
-        <!--View Controller-->
+        <!--Restaurant Details View Controller-->
         <scene sceneID="mAO-9Y-U5N">
             <objects>
-                <viewController id="oQx-st-5fW" sceneMemberID="viewController">
+                <viewController id="oQx-st-5fW" customClass="RestaurantDetailsViewController" customModule="Restos" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="yo0-MP-hA5"/>
                         <viewControllerLayoutGuide type="bottom" id="bFs-ZD-WsX"/>
