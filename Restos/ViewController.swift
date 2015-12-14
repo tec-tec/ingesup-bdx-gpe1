@@ -19,9 +19,13 @@ class ViewController: UIViewController {
 
     var restoManager = RestaurantManager()
 
+    var color: UIColor?
+
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+
+//        view.backgroundColor = color
 
         styleSegmentedControl.removeAllSegments()
 
