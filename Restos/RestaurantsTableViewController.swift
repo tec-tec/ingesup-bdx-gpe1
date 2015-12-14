@@ -10,6 +10,8 @@ import UIKit
 
 class RestaurantsTableViewController: UITableViewController {
 
+    let restaurantMananger = RestaurantManager()
+
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -29,7 +31,7 @@ class RestaurantsTableViewController: UITableViewController {
 
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return 1000
+        return restaurantMananger.allRestaurants.count
     }
 
 
@@ -38,7 +40,8 @@ class RestaurantsTableViewController: UITableViewController {
 
         // Configure the cell...
 
-        cell.textLabel?.text = "toto"
+        cell.textLabel?.text = restaurantMananger.allRestaurants[indexPath.row].name
+        cell.detailTextLabel?.text = restaurantMananger.allRestaurants[indexPath.row].address
 
         return cell
     }
