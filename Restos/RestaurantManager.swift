@@ -10,7 +10,13 @@ import UIKit
 
 class RestaurantManager {
 
-    private var restoArray = [Restaurant]()
+    private var restoArray: [Restaurant]
+
+    init() {
+
+        restoArray = [Restaurant]()
+        generateFakeRestaurants(10)
+    }
 
     var allRestaurants: [Restaurant] {
         return restoArray
@@ -20,5 +26,12 @@ class RestaurantManager {
 
         restoArray.append(resto)
     }
+
+    func generateFakeRestaurants(numberOfRestaurant: Int) {
+
+        for x in 0..<numberOfRestaurant
+        {
+            restoArray.append(Restaurant(name: "Restaurant n°\(x)", address: "Adresse du resto n°\(x)", style: Restaurant.RestoStyle.Unknown))
+        }}
 
 }
