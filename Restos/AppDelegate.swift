@@ -16,6 +16,15 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         // Override point for customization after application launch.
+
+        let prefs = NSUserDefaults.standardUserDefaults()
+
+        if let prenom = prefs.stringForKey("firstName") {
+            print(prenom)
+        } else {
+            prefs.setObject("Ludovic", forKey: "firstName")
+        }
+
         return true
     }
 
