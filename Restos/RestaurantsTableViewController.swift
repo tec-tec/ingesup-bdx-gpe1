@@ -55,7 +55,7 @@ class RestaurantsTableViewController: UITableViewController {
 
         if segue.identifier == "showForm" {
             let nextVC = segue.destinationViewController as! ViewController
-//            nextVC.color = UIColor.blueColor()
+            nextVC.restoManager = self.restaurantMananger
         }
 
         else if segue.identifier == "showDetails" {

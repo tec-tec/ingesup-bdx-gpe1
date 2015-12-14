@@ -17,9 +17,7 @@ class ViewController: UIViewController {
     @IBOutlet weak var gradeSlider: UISlider!
     @IBOutlet weak var gradeLabel: UILabel!
 
-    var restoManager = RestaurantManager()
-
-    var color: UIColor?
+    var restoManager: RestaurantManager!
 
     override func viewDidLoad() {
         super.viewDidLoad()
