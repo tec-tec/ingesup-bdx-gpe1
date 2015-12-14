@@ -69,7 +69,17 @@ class RestaurantsTableViewController: UITableViewController {
 
         else if segue.identifier == "showDetails" {
 
-            print("Not yet implemented")
+            guard let cell = sender as? UITableViewCell else {
+                return
+            }
+
+            guard let indexPath = self.tableView.indexPathForCell(cell) else {
+                return
+            }
+
+            let nextVC = segue.destinationViewController as! RestaurantDetailsViewController
+            nextVC.currentRestaurant = restaurantMananger.allRestaurants[indexPath.row]
+
         }
 
     }
