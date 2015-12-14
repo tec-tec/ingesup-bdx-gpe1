@@ -31,7 +31,7 @@ class RestaurantManager {
 
         for x in 0..<numberOfRestaurant
         {
-            restoArray.append(Restaurant(name: "Restaurant n°\(x)", address: "Adresse du resto n°\(x)", style: Restaurant.RestoStyle.Unknown))
+            restoArray.append(Restaurant(name: "Restaurant n°\(x)", address: "\(x) Quai des Chartrons, Bordeaux", style: Restaurant.RestoStyle.Unknown))
         }}
 
 }

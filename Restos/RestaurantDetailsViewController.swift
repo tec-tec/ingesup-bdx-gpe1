@@ -7,11 +7,14 @@
 //
 
 import UIKit
+import MapKit
+import CoreLocation
 
 class RestaurantDetailsViewController: UIViewController {
 
     @IBOutlet weak var addressLabel: UILabel!
     @IBOutlet weak var gradeLabel: UILabel!
+    @IBOutlet weak var mapView: MKMapView!
 
     var currentRestaurant: Restaurant!
     
@@ -37,6 +40,28 @@ class RestaurantDetailsViewController: UIViewController {
             gradeLabel.text = "\(grade)"
         } else {
             gradeLabel.text = "Non noté"
+        }
+
+        geocode(currentRestaurant.address)
+    }
+
+    func geocode(address: String) {
+
+        let geoCoder = CLGeocoder()
+        geoCoder.geocodeAddressString(address) { (placemarkArray, error) -> Void in
+
+            guard error == nil else {
+                return
+            }
+
+            guard placemarkArray != nil && placemarkArray!.count > 0 else {
+                return
+            }
+
+            let mapPlaceMark = MKPlacemark(placemark: placemarkArray!.first!)
+
+            self.mapView.addAnnotation(mapPlaceMark)
+            
         }
     }
 
